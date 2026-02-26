@@ -1,0 +1,17 @@
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\exception\BusinessException.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\exception\ResourceNotFoundException.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\entity\LibrarySpace.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\controller\LibrarySpaceController.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\dto\LibrarySpaceRequest.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\dto\LibrarySpaceResponse.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\repository\LibrarySpaceRepository.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\service\LibrarySpaceService.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\entity\SpaceAvailability.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\SpaceServiceApplication.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\exception\GlobalExceptionHandler.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\dto\ApiResponse.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\dto\ReservationResponse.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\client\ReservationClient.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\entity\SpaceType.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\mapper\LibrarySpaceMapper.java
+c:\Users\USER\Desktop\suivi wd\library-microservices\space-service\src\main\java\com\library\spaceservice\service\impl\LibrarySpaceServiceImpl.java
