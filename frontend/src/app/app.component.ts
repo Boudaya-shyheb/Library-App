@@ -69,7 +69,7 @@ import { ToastComponent } from './shared/toast.component';
         <header class="top-bar">
           <div class="gateway-info">
             <span class="label">API Gateway:</span>
-            <span class="val">localhost:9000</span>
+            <span class="val">localhost:8080</span>
           </div>
           <div class="user-id">
             Admin Mode

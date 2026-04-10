@@ -54,7 +54,7 @@ import { ApiService } from '../../core/api.service';
 
       <div class="services-status-card card">
         <div class="card-header">
-          <h3>Gateway Routing Table (Port 9000)</h3>
+          <h3>Gateway Routing Table (Port 8080)</h3>
         </div>
         <div class="table-container">
           <table>

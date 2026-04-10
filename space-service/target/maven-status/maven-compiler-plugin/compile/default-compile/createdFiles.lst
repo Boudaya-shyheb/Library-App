@@ -3,6 +3,7 @@ com\library\spaceservice\controller\LibrarySpaceController.class
 com\library\spaceservice\dto\LibrarySpaceRequest$LibrarySpaceRequestBuilder.class
 com\library\spaceservice\entity\LibrarySpace.class
 com\library\spaceservice\exception\BusinessException.class
+com\library\spaceservice\config\SecurityConfig.class
 com\library\spaceservice\dto\ReservationResponse.class
 com\library\spaceservice\entity\SpaceType.class
 com\library\spaceservice\repository\LibrarySpaceRepository.class

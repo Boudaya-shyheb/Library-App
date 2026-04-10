@@ -1,6 +1,7 @@
 com\library\reservationservice\dto\ReservationResponse.class
 com\library\reservationservice\dto\ReservationRequest.class
 com\library\reservationservice\ReservationServiceApplication.class
+com\library\reservationservice\config\SecurityConfig.class
 com\library\reservationservice\exception\GlobalExceptionHandler.class
 com\library\reservationservice\repository\ReservationRepository.class
 com\library\reservationservice\entity\Reservation$ReservationBuilder.class

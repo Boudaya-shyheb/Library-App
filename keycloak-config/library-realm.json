@@ -1,0 +1,73 @@
+{
+  "realm": "library-realm",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "library-client",
+      "enabled": true,
+      "publicClient": true,
+      "protocol": "openid-connect",
+      "rootUrl": "http://localhost:4200",
+      "baseUrl": "/",
+      "redirectUris": [
+        "http://localhost:4200/*",
+        "http://localhost:8080/*"
+      ],
+      "webOrigins": [
+        "http://localhost:4200",
+        "*"
+      ],
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "USER",
+        "description": "Library User role"
+      },
+      {
+        "name": "ADMIN",
+        "description": "Library Administrator role"
+      }
+    ]
+  },
+  "users": [
+    {
+      "username": "library-user",
+      "enabled": true,
+      "email": "user@library.com",
+      "firstName": "Library",
+      "lastName": "User",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "password123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "USER"
+      ]
+    },
+    {
+      "username": "admin",
+      "enabled": true,
+      "email": "admin@library.com",
+      "firstName": "Library",
+      "lastName": "Admin",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "ADMIN",
+        "USER"
+      ]
+    }
+  ]
+}

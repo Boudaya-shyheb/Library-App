@@ -1,6 +1,7 @@
 C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\controller\ReservationController.java
 C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\entity\ReservationStatus.java
 C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\entity\Reservation.java
+C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\config\SecurityConfig.java
 C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\repository\ReservationRepository.java
 C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\dto\ReservationRequest.java
 C:\Users\USER\Desktop\suivi wd\library-microservices\reservation-service\src\main\java\com\library\reservationservice\dto\ReservationResponse.java
