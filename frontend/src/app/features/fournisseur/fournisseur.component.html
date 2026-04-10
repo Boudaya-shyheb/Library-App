@@ -1,0 +1,25 @@
+<section class="page">
+  <h2>Fournisseurs</h2>
+  <form (ngSubmit)="submit()" class="grid">
+    <input [(ngModel)]="form.nom" name="nom" placeholder="Nom" required />
+    <input [(ngModel)]="form.email" name="email" placeholder="Email" required />
+    <input [(ngModel)]="form.telephone" name="telephone" placeholder="Telephone" />
+    <input [(ngModel)]="form.adresse" name="adresse" placeholder="Adresse" />
+    <button type="submit">{{ editingId ? 'Enregistrer' : 'Ajouter' }}</button>
+    <button type="button" *ngIf="editingId" (click)="cancelEdit()">Annuler</button>
+  </form>
+
+  <p *ngIf="loading">Chargement...</p>
+  <p *ngIf="!loading && fournisseurs.length === 0">Aucun fournisseur.</p>
+  <table *ngIf="!loading && fournisseurs.length">
+    <tr><th>Nom</th><th>Email</th><th>Actions</th></tr>
+    <tr *ngFor="let item of fournisseurs">
+      <td>{{ item.nom }}</td>
+      <td>{{ item.email }}</td>
+      <td>
+        <button (click)="edit(item)">Modifier</button>
+        <button (click)="delete(item.id)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</section>

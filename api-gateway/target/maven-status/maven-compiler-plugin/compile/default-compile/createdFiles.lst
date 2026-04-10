@@ -1,1 +1,4 @@
+com\library\apigateway\config\SecurityConfig.class
 com\library\apigateway\ApiGatewayApplication.class
+com\library\apigateway\filter\RequestPolicyFilter.class
+com\library\apigateway\filter\RequestPolicyFilter$BucketState.class

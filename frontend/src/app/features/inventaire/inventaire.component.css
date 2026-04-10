@@ -1,0 +1,5 @@
+.page { padding: 16px; }
+.grid { display: grid; gap: 8px; max-width: 520px; margin-bottom: 14px; }
+input, button { padding: 8px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 8px; }

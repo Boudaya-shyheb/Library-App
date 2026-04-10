@@ -1,0 +1,27 @@
+<section class="page">
+  <h2>Inventaire</h2>
+  <form (ngSubmit)="submit()" class="grid">
+    <input [(ngModel)]="form.title" name="title" placeholder="Titre" required />
+    <input [(ngModel)]="form.author" name="author" placeholder="Auteur" required />
+    <input [(ngModel)]="form.isbn" name="isbn" placeholder="ISBN" required />
+    <input [(ngModel)]="form.category" name="category" placeholder="Categorie" required />
+    <input [(ngModel)]="form.publicationYear" type="number" name="publicationYear" placeholder="Annee" required />
+    <button type="submit">{{ editingId ? 'Enregistrer' : 'Ajouter' }}</button>
+    <button type="button" *ngIf="editingId" (click)="cancelEdit()">Annuler</button>
+  </form>
+
+  <p *ngIf="loading">Chargement...</p>
+  <p *ngIf="!loading && books.length === 0">Aucun livre.</p>
+  <table *ngIf="!loading && books.length">
+    <tr><th>Titre</th><th>Auteur</th><th>ISBN</th><th>Actions</th></tr>
+    <tr *ngFor="let item of books">
+      <td>{{ item.title }}</td>
+      <td>{{ item.author }}</td>
+      <td>{{ item.isbn }}</td>
+      <td>
+        <button (click)="edit(item)">Modifier</button>
+        <button (click)="delete(item.bookId)">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</section>
