@@ -12,13 +12,26 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.esprit.microservice.emprunt.client.InventaireClient;
+import com.esprit.microservice.emprunt.DTO.BookDTO;
+
 @Service
 @RequiredArgsConstructor
 public class EmpruntService {
 
     private final EmpruntRepository empruntRepository;
+    private final InventaireClient inventaireClient;
+    private final EmpruntEventProducer eventProducer;
 
     public EmpruntDTO createEmprunt(EmpruntDTO empruntDTO) {
+        // [OpenFeign] Verify if document is in stock
+        if ("BOOK".equalsIgnoreCase(empruntDTO.getDocumentType())) {
+            BookDTO.ApiResponse<BookDTO> response = inventaireClient.getBookById(empruntDTO.getDocumentId());
+            if (response == null || response.getData() == null || response.getData().getQuantity() <= 0) {
+                throw new RuntimeException("Cannot borrow book! Either it does not exist or stock is empty.");
+            }
+        }
+
         Emprunt emprunt = new Emprunt();
         emprunt.setUserId(empruntDTO.getUserId());
         emprunt.setDocumentId(empruntDTO.getDocumentId());
@@ -29,6 +42,12 @@ public class EmpruntService {
         emprunt.setNotes(empruntDTO.getNotes());
 
         Emprunt savedEmprunt = empruntRepository.save(emprunt);
+
+        // [RabbitMQ] Asynchronously notify to decrease stock
+        if ("BOOK".equalsIgnoreCase(empruntDTO.getDocumentType())) {
+            eventProducer.sendDocumentBorrowedEvent(savedEmprunt.getDocumentId());
+        }
+
         return convertToDTO(savedEmprunt);
     }
 
@@ -104,6 +123,12 @@ public class EmpruntService {
             emprunt.setReturnDate(LocalDateTime.now());
             emprunt.setStatut(StatutEmprunt.RETOURNE);
             Emprunt returnedEmprunt = empruntRepository.save(emprunt);
+            
+            // [RabbitMQ] Asynchronously notify to increase stock
+            if ("BOOK".equalsIgnoreCase(returnedEmprunt.getDocumentType())) {
+                eventProducer.sendDocumentReturnedEvent(returnedEmprunt.getDocumentId());
+            }
+
             return convertToDTO(returnedEmprunt);
         }
         return null;
